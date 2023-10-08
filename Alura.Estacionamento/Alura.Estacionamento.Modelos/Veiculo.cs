@@ -95,6 +95,22 @@ namespace Alura.Estacionamento.Modelos
            Proprietario = proprietario;
         }
 
-       
-    }
+		public void AlterarDados(Veiculo veiculoAlterado)
+		{
+            Proprietario = veiculoAlterado.Proprietario;
+            Modelo = veiculoAlterado.Modelo;
+            Largura = veiculoAlterado.Largura;
+            Cor = veiculoAlterado.Cor;
+		}
+
+		public override string ToString()
+		{
+            return $"Ficha do veículo:\n" +
+                $"Tipo do veículo: {Tipo.ToString()}\n" +
+                $"Proprietário: {Proprietario}\n" +
+                $"Modelo: {Modelo}\n" +
+                $"Cor: {Cor}\n" +
+                $"Placa: {Placa}\n";
+		}
+	}
 }
