@@ -21,8 +21,6 @@ namespace Alura.Estacionamento.Testes
 		[Fact]
 		public void TestaVeiculoAcelerarComParamentro10()
 		{
-			//var veiculo = new Veiculo();
-
 			veiculo.Acelerar(10);
 
 			Assert.Equal(100, veiculo.VelocidadeAtual);
@@ -31,8 +29,6 @@ namespace Alura.Estacionamento.Testes
 		[Fact]
 		public void TestaVeiculoFrearComParametro10()
 		{
-			//var veiculo = new Veiculo();
-
 			veiculo.Frear(10);
 
 			Assert.Equal(-150, veiculo.VelocidadeAtual);
@@ -57,7 +53,6 @@ namespace Alura.Estacionamento.Testes
 		[Fact]
 		public void FichaDeInformacaoDoVeiculo()
 		{
-			//var veiculo = new Veiculo();
 			veiculo.Proprietario = "Daniel Gomes";
 			veiculo.Tipo = TipoVeiculo.Automovel;
 			veiculo.Placa = "BUG-8080";

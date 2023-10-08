@@ -1,10 +1,6 @@
 ﻿using Alura.Estacionamento.Alura.Estacionamento.Modelos;
 using Alura.Estacionamento.Modelos;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -29,10 +25,6 @@ namespace Alura.Estacionamento.Testes
 		public void ValidaFaturamentoDoEstacionamentoComUmVeiculo()
 		{
 			var estacionamento = new Patio();
-			//Operador operador = new Operador();
-			//operador.Nome = "Deodoro Fonseca";
-			//var veiculo = new Veiculo();
-
 			estacionamento.OperadorPatio = operador;
 			veiculo.Proprietario = "Daniel Gomes";
 			veiculo.Tipo = TipoVeiculo.Automovel;
@@ -56,7 +48,6 @@ namespace Alura.Estacionamento.Testes
 		{
 			var estacionamento = new Patio();
 			estacionamento.OperadorPatio = operador;
-			//var veiculo = new Veiculo();
 			veiculo.Proprietario = proprietario;
 			veiculo.Placa = placa;
 			veiculo.Cor = cor;
@@ -76,7 +67,6 @@ namespace Alura.Estacionamento.Testes
 		{
 			var estacionamento = new Patio();
 			estacionamento.OperadorPatio = operador;
-			//var veiculo = new Veiculo();
 			veiculo.Proprietario = proprietario;
 			veiculo.Placa = placa;
 			veiculo.Cor = cor;
@@ -94,8 +84,6 @@ namespace Alura.Estacionamento.Testes
 		{
 			var estacionamento = new Patio();
 			estacionamento.OperadorPatio = operador;
-			//var veiculo = new Veiculo();
-
 			veiculo.Proprietario = "Daniel Gomes";
 			veiculo.Placa = "DFG-8080";
 			veiculo.Cor = "Preto";

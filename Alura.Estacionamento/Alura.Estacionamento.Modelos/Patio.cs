@@ -1,16 +1,12 @@
 ﻿using Alura.Estacionamento.Alura.Estacionamento.Modelos;
-using Alura.Estacionamento.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Alura.Estacionamento.Modelos
 {
-    public class Patio
+	public class Patio
     {
-       
         public Patio()
         {
             Faturado = 0;
@@ -26,12 +22,12 @@ namespace Alura.Estacionamento.Modelos
 
 		public double TotalFaturado()
         {
-            return this.Faturado;
+            return Faturado;
         }
 
         public string MostrarFaturamento()
         {
-            string totalfaturado = String.Format("Total faturado até o momento :::::::::::::::::::::::::::: {0:c}", this.TotalFaturado());
+            string totalfaturado = String.Format("Total faturado até o momento :::::::::::::::::::::::::::: {0:c}", TotalFaturado());
             return totalfaturado;
         }
 
@@ -39,7 +35,7 @@ namespace Alura.Estacionamento.Modelos
         {
             veiculo.HoraEntrada = DateTime.Now;
             GerarTicket(veiculo);
-            this.Veiculos.Add(veiculo);            
+            Veiculos.Add(veiculo);            
         }
 
         public string RegistrarSaidaVeiculo(String placa)
@@ -47,7 +43,7 @@ namespace Alura.Estacionamento.Modelos
             Veiculo procurado = null;
             string informacao=string.Empty;
 
-            foreach (Veiculo v in this.Veiculos)
+            foreach (Veiculo v in Veiculos)
             {
                 if (v.Placa == placa)
                 {
@@ -71,14 +67,14 @@ namespace Alura.Estacionamento.Modelos
                                              "Permanência: {2: HH:mm:ss} \n "       +
                                              "Valor a pagar: {3:c}", v.HoraEntrada, v.HoraSaida, new DateTime().Add(tempoPermanencia), valorASerCobrado);
                     procurado = v;
-                    this.Faturado = this.Faturado + valorASerCobrado;
+                    Faturado = Faturado + valorASerCobrado;
                     break;
                 }
 
             }
             if (procurado != null)
             {
-                this.Veiculos.Remove(procurado);
+                Veiculos.Remove(procurado);
             }
             else
             {

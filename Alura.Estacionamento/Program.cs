@@ -1,14 +1,11 @@
 ﻿using Alura.Estacionamento.Alura.Estacionamento.Modelos;
 using Alura.Estacionamento.Modelos;
 using System;
-using System.Collections.Generic;
 
 namespace Alura.Estacionamento
 {
-    class Program
+	class Program
     {
-        // Cria uma lista de objetos do tipo veículos, para armazenar
-        // os veículos (automovéis e motos) que estão no estacionamento;
         static Patio estacionamento = new Patio();         
 
         static void Main(string[] args)
@@ -21,18 +18,16 @@ namespace Alura.Estacionamento
                 opcao = LerOpcaoMenu();
                 ProcessarOpcaoMenu(opcao);
                 PressionaTecla();
-                Console.Clear();// limpa a tela;
+                Console.Clear();
             } while (opcao != "5");
         }
                 
-        // Métodos de negócios.
         static void MostrarVeiculosEstacionados()
         {
             Console.Clear();
             Console.WriteLine(" Veículos Estacionados");
             foreach (Veiculo v in estacionamento.Veiculos)
             {
-                // placa, proprietario, hora
                 Console.WriteLine("Placa :{0}", v.Placa);
                 Console.WriteLine("Proprietário :{0}", v.Proprietario);
                 Console.WriteLine("Hora de entrada :{0:HH:mm:ss}", v.HoraEntrada);
@@ -81,7 +76,6 @@ namespace Alura.Estacionamento
             Console.WriteLine("Dados da Motocicleta");
             Veiculo moto = new Veiculo();
             moto.Tipo = TipoVeiculo.Motocicleta;
-            //preeencher placa,cor,hora,entrada e proprietário
             Console.Write("Digite os dados da placa (XXX-9999): ");
             try
             {
@@ -111,7 +105,6 @@ namespace Alura.Estacionamento
             Console.WriteLine("Dados do Automovél");
             Veiculo carro = new Veiculo();
             carro.Tipo = TipoVeiculo.Automovel;
-            //preeencher placa,cor,hora,entrada e proprietário.
             Console.Write("Digite os dados da placa (XXX-9999): ");
             try
             {
@@ -134,7 +127,6 @@ namespace Alura.Estacionamento
             Console.WriteLine("Automóvel registrado com sucesso!");            
         }
 
-        // Monta a interface da aplicação.
         static string MostrarCabecalho()
         {
             return "Controle de Estacionamento Rotativo";
@@ -190,7 +182,5 @@ namespace Alura.Estacionamento
                     break;
             }
         }
-
-    }
-    
+    } 
 }
